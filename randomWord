@@ -1,5 +1,8 @@
 
 #!/bin/bash
+
+## The script will produce a random word every time its run.
+
 # create the wordfile incase it doesn't exist
 if [ ! -f /usr/share/dict/words ]; then
         sudo wget https://raw.githubusercontent.com/eneko/data-repository/master/data/words.txt -O /usr/share/dict/
@@ -15,9 +18,3 @@ RANDOM=$$;
 lines=$(cat $WORDFILE  | wc -l);
 rnum=$((RANDOM*RANDOM%$lines+1));
 sed -n "$rnum p" $WORDFILE;
-~
-~
-~
-~
-~
-~
