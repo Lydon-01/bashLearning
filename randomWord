@@ -1,4 +1,8 @@
-#!/bin/bash/
+#!/bin/bash
+# create the wordfile incase it doesn't exist
+sudo wget https://raw.githubusercontent.com/eneko/data-repository/master/data/words.txt -O /usr/share/dict/
+mv /usr/share/dict/words.txt /usr/share/dict/words
+
 WORDFILE=/usr/share/dict/words
 # seed random from pid
 RANDOM=$$;
