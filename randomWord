@@ -1,12 +1,23 @@
+
 #!/bin/bash
 # create the wordfile incase it doesn't exist
-sudo wget https://raw.githubusercontent.com/eneko/data-repository/master/data/words.txt -O /usr/share/dict/
-mv /usr/share/dict/words.txt /usr/share/dict/words
+if [ ! -f /usr/share/dict/words ]; then
+        sudo wget https://raw.githubusercontent.com/eneko/data-repository/master/data/words.txt -O /usr/share/dict/
+        mv /usr/share/dict/words.txt /usr/share/dict/words
+fi
 
 WORDFILE=/usr/share/dict/words
+
 # seed random from pid
 RANDOM=$$;
+
 # using cat means wc outputs only a number, not number followed by filename
 lines=$(cat $WORDFILE  | wc -l);
 rnum=$((RANDOM*RANDOM%$lines+1));
 sed -n "$rnum p" $WORDFILE;
+~
+~
+~
+~
+~
+~
